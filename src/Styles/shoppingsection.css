@@ -1,0 +1,22 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.shop-title {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  font-size: 2rem;
+  font-family: Clashgrotesk, sans-serif;
+  font-weight: 500;
+}
+
+hr {
+  margin-top: 15px;
+  border: 2px solid black;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

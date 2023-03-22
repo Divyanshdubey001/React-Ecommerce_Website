@@ -1,0 +1,28 @@
+.image-slider-container {
+  margin: 3rem;
+  margin: 30px;
+}
+
+.image-slide {
+  width: 70vw;
+  height: 70vh;
+  background-color: transparent;
+  border-radius: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img {
+  display: inline-block;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 50px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 50px;
+}

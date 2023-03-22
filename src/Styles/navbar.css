@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.image-container {
+  height: 100vh;
+  width: 98.9vw;
+  background: url("https://uploads-ssl.webflow.com/61729525b4336c28edfd9a02/6172a395d864721a92ff88e6_hero-min.jpg");
+  background-position: 0% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title-nav {
+  font-size: 2.2rem;
+  line-height: 32px;
+  font-family: "Clashdisplay, sans-serif";
+  display: flex;
+  position: absolute;
+  padding: 1.2rem;
+  font-weight: 600;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
+.nav-bar-wrapper {
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: space-between;
+  padding: 2.2rem;
+  border-radius: 1.2rem;
+  background-color: #f1eeda;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  font-family: Hkgrotesk, sans-serif;
+  overflow: hidden;
+  letter-spacing: 0.6px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: green;
+  margin-left: 2rem;
+}
+
+.panding-page-wrapper {
+  margin-top: 20rem;
+  max-width: 18rem;
+  background-color: #d4e3d3;
+  position: relative;
+  border-radius: 1rem;
+  margin-left: 5rem;
+  padding: 5rem 4.2rem 3.2rem 3rem
+}
+
+.landing-page-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.landing-page-button {
+  border-style: solid;
+  border-width: 0.5rem;
+  border-color: #292929;
+  border-radius: 500px;
+  background-color: #0f352e;
+  transition: color 300ms ease;
+  background-color: 300ms ease-in-out;
+  font-family: Hkgrotesk, sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1rem;
+}
