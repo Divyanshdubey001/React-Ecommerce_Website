@@ -1,88 +1,42 @@
-// import { useEffect, useState } from "react";
-// import "../Styles/shoppingsection.css";
-
-// const ShoppingSection = () => {
-//   const [data, setData] = useState([]);
-
-//   const fetchItems = () => {
-//     fetch("https://dummyjson.com/products")
-//       .then((response) => {
-//         return response.json();
-//       })
-//       .then((data) => {
-//         setData(data);
-//       })
-//       .catch((error) => console.error(error));
-//   };
-
-//   useEffect(() => {
-//     fetchItems();
-//   }, []);
-
-//   return (
-//     <>
-//       <div className="shop-bundles">
-//         <div className="shop-title">
-//           <h2>Shop Bundles</h2>
-//           <hr></hr>
-//         </div>
-//       </div>
-//       <ul>
-//         {data.map((product) => (
-//           <li key={product.id}>{product.name}</li>
-//         ))}
-//       </ul>
-//     </>
-//   );
-// };
-
-// export default ShoppingSection;
-
-// import React, { useState, useEffect } from 'react';
-
-// function ShoppingSection() {
-//   const [data, setData] = useState([]);
-
-//   useEffect(() => {
-//     fetch('https://dummyjson.com/products')
-//       .then(response => response.json())
-//       .then(data => setData(data))
-//       .catch(error => console.error(error));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Products</h1>
-//       <ul>
-//         {data.map(product => (
-//           <li key={product.id}>{product.title}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// export default ShoppingSection;
-
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import "../Styles/shoppingsection.css";
 
 function ShoppingSection() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState("");
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data.products));
   }, []);
 
+  console.log(products);
+
+  if (!products) {
+    return "loading...";
+  }
+
   return (
-    <div>
-      <h1>Products</h1>
-      <ul>
+    <div className="card-container">
+      <div className="shop-title">
+        <h2>Shop Bundles</h2>
+        <hr></hr>
+      </div>
+      <div className="card-wrapper">
         {products.map((product) => (
-          <li key={product.id}>{product.price}</li>
+          <div key={product.id} className="card">
+            <img src={product.thumbnail} alt={product.title} className="imgs" />
+            <div className="card-body">
+              <h5 className="card-title">{product.title}</h5>
+              <p className="card-text">{product.description}</p>
+              <p className="card-price">${product.price}</p>
+              <p className="card-rating">{product.rating} stars</p>
+              <p className="stock">{product.stock}</p>
+              <p className="brand">{product.brand}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

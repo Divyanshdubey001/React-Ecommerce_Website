@@ -19,4 +19,60 @@ hr {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  flex-basis: 33.3%;
+  background-color: transparent;
+  position: absolute;
+}
+
+.imgs img {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.card-body {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 2px;
+}
+
+.card-area {
+  background-color: #f1eeda;
+}
+
+.card-text {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.class_image {
+  object-fit: cover;
+  border-radius: 1rem;
+  margin: 2px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.class_desc,
+.class_price,
+.class_rating,
+.class_stock,
+.class_brand {
+  margin-top: 10px;
 }

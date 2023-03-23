@@ -1,0 +1,6 @@
+.page-container{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
