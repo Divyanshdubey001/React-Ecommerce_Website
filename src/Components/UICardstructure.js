@@ -4,24 +4,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import { useEffect, useState } from "react";
 import "../Styles/shoppingsection.css";
 
-export default function MultiActionAreaCard() {
-  const [products, setProducts] = useState("");
-
-  useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=12")
-      .then((response) => response.json())
-      .then((data) => setProducts(data.products));
-  }, []);
-
-  console.log(products);
-
+export default function MultiActionAreaCard({products}) {
   if (!products) {
     return "loading...";
   }
-
   return (
     <>
       <div className="shop-title">
@@ -30,7 +18,7 @@ export default function MultiActionAreaCard() {
       </div>
       <div className="card-container">
         {products.map((product) => (
-          <Card sx={{ maxWidth: 345 }}>
+          <Card sx={{ maxWidth: 375, margin: 1.5 }}>
             <CardActionArea className="card-area">
               <CardMedia
                 component="img"
@@ -95,6 +83,12 @@ export default function MultiActionAreaCard() {
             <CardActions>
               <Button size="small" color="primary">
                 Shop Now
+              </Button>
+              <Button size="small" color="primary">
+                Add to Cart
+              </Button>
+              <Button size="small" color="primary">
+                Remove from Cart
               </Button>
             </CardActions>
           </Card>

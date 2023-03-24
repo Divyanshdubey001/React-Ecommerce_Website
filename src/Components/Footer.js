@@ -10,16 +10,18 @@ const Footer = () => {
             <p className="desc-about">
               <br></br>
               <br></br>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
               <br></br>
-              It has been the industry's standard dummy text ever since the 1500s, 
+              It has been the industry's standard dummy text ever since the
+              1500s,
               <br></br>
               when an unknown printer took a galley of type.
             </p>
             <p>
               <br></br>
               <br></br>
-              Copyright 2020 Catalog-Z Company. All rights reserved.
+              Copyright 2023 Be Bold Company. All rights reserved.
             </p>
           </div>
         </div>
