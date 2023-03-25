@@ -9,37 +9,44 @@ const SliderFunction = () => {
   const sliderImages = [
     {
       id: 1,
-      imgsrc: "https://i.dummyjson.com/data/products/29/1.jpg",
+      imgsrc:
+        "https://images.unsplash.com/photo-1578916171728-46686eac8d58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
       alt: "image1",
     },
     {
       id: 2,
-      imgsrc: "https://i.dummyjson.com/data/products/1/3.jpg",
+      imgsrc:
+        "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       alt: "image2",
     },
     {
       id: 3,
-      imgsrc: "https://i.dummyjson.com/data/products/6/3.png",
+      imgsrc:
+        "https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1201&q=80",
       alt: "image3",
     },
     {
       id: 4,
-      imgsrc: "https://i.dummyjson.com/data/products/11/2.jpg",
+      imgsrc:
+        "https://images.unsplash.com/photo-1557827983-012eb6ea8dc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80",
       alt: "image4",
     },
     {
       id: 5,
-      imgsrc: "https://i.dummyjson.com/data/products/16/4.jpg",
+      imgsrc:
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1400&q=80",
       alt: "image5",
     },
     {
       id: 6,
-      imgsrc: "https://i.dummyjson.com/data/products/25/1.png",
+      imgsrc:
+        "https://images.unsplash.com/photo-1610465299993-e6675c9f9efa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       alt: "image6",
     },
     {
       id: 7,
-      imgsrc: "https://i.dummyjson.com/data/products/27/1.jpg",
+      imgsrc:
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
       alt: "image7",
     },
   ];
