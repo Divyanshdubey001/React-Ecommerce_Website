@@ -10,6 +10,7 @@ import "../Styles/shoppingsection.css";
 
 export default function MultiActionAreaCard({ products }) {
   const data = products;
+  console.log(data);
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
