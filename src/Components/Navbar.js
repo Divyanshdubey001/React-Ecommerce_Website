@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../Styles/navbar.css";
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <>
       <div className="image-container">
@@ -10,28 +17,35 @@ const Navbar = () => {
             <a href="#bebold">Be Bold</a>
           </div>
           <div className="nav-bar-wrapper">
-            <nav>
-              <ul>
-                <li>
-                  <NavLink to="/smartphones">Smartphones</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/laptop">Laptop</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/groceries">Groceries</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/fragnence">Fragnences</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/skincare">Skin Care</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/home decoration">Home Decoration</NavLink>
-                </li>
-              </ul>
-            </nav>
+            <div className={`nav-bar-menu ${showMenu ? "show" : ""}`}>
+              <nav>
+                <ul>
+                  <li>
+                    <NavLink to="/smartphones">Smartphones</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/laptop">Laptop</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/groceries">Groceries</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/fragnence">Fragnences</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/skincare">Skin Care</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/home decoration">Home Decoration</NavLink>
+                  </li>
+                </ul>
+                <div className="nav-bar-hamburger" onClick={toggleMenu}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </nav>
+            </div>
           </div>
         </div>
         <div className="panding-page-wrapper">
@@ -48,7 +62,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
     </>
   );
 };

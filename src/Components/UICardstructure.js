@@ -4,12 +4,29 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { useState, useEffect } from "react";
+import ReactPaginate from "react-paginate";
 import "../Styles/shoppingsection.css";
 
-export default function MultiActionAreaCard({products}) {
-  if (!products) {
-    return "loading...";
-  }
+export default function MultiActionAreaCard({ products }) {
+  const data = products;
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 9;
+
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setCurrentItems(data.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(data.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, data]);
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % data.length;
+    setItemOffset(newOffset);
+  };
+
   return (
     <>
       <div className="shop-title">
@@ -17,16 +34,17 @@ export default function MultiActionAreaCard({products}) {
         <hr></hr>
       </div>
       <div className="card-container">
-        {products.map((product) => (
+        {currentItems.map((item) => (
           <Card sx={{ maxWidth: 375, margin: 1.5 }}>
             <CardActionArea className="card-area">
               <CardMedia
                 component="img"
                 height="240"
-                image={product.thumbnail}
-                alt={product.title}
+                image={item.thumbnail}
+                alt={item.title}
                 className="class_image"
               />
+
               <CardContent>
                 <Typography
                   gutterBottom
@@ -34,49 +52,49 @@ export default function MultiActionAreaCard({products}) {
                   className="card_body"
                   component="div"
                 >
-                  {product.title}
+                  {item.title}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   className="class_desc"
                 >
-                  {product.description}
+                  {item.description}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   className="class_price"
                 >
-                  Price : ${product.price}
+                  Price : ${item.price}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   className="class_rating"
                 >
-                  Rating : {product.rating} stars
+                  Rating : {item.rating} stars
                 </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   className="class_stock"
                 >
-                  Availability : {product.stock}
+                  Availability : {item.stock}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   className="class_brand"
                 >
-                  Brand : {product.brand}
+                  Brand : {item.brand}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   className="class_brand"
                 >
-                  Category : {product.category}
+                  Category : {item.category}
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -93,6 +111,18 @@ export default function MultiActionAreaCard({products}) {
             </CardActions>
           </Card>
         ))}
+      </div>
+      <div className="page-container">
+        <ReactPaginate
+          className="page"
+          breakLabel="..."
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="< previous"
+          renderOnZeroPageCount={null}
+        />
       </div>
     </>
   );
