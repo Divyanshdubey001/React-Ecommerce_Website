@@ -65,16 +65,16 @@ const SliderFunction = () => {
   return (
     <>
       <div className="image-slider-container">
+        <div className="left-arrow">
+          <ArrowCircleLeftTwoToneIcon onClick={handlePrevClick} className="leftArrow" />
+        </div>
         <img
           src={sliderImages[currentImage].imgsrc}
           alt={sliderImages[currentImage].alt}
           className="image-slide"
         ></img>
-        <div className="left-arrow">
-          <ArrowCircleLeftTwoToneIcon onClick={handlePrevClick} />
-        </div>
         <div className="right-arrow">
-          <ArrowCircleRightTwoToneIcon onClick={HandlenextClick} />
+          <ArrowCircleRightTwoToneIcon onClick={HandlenextClick} className="rightArrow"/>
         </div>
       </div>
     </>

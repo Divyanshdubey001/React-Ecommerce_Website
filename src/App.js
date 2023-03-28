@@ -1,14 +1,8 @@
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Slider from "./Components/Slider";
-// import ShoppingSection from "./Components/ShoppingSection";
-import UICardstructure from "./Components/UICardstructure";
-import Footer from "./Components/Footer";
-import Newsletter from "./Components/Newsletter";
-
-
+import { Routes, Route } from "react-router-dom";
+import SignUp from "./Components/Signup";
 import { useEffect, useState } from "react";
+import Home from "./Components/Home";
 
 function App() {
   const [products, setProducts] = useState("");
@@ -19,19 +13,17 @@ function App() {
       .then((data) => setProducts(data.products));
   }, []);
 
-  if(!products){
-    return "Loading..."
+  if (!products) {
+    return "Loading...";
   }
 
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
-      <Slider />
-      <UICardstructure products={products} />
-      <Newsletter />
-      <Footer />
+      <Routes>
+        <Route exact path="/" element={<Home products={products} />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+
       {/* <ShoppingSection /> */}
     </>
   );

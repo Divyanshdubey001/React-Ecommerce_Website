@@ -103,12 +103,13 @@ hr {
   color: #333;
   text-decoration: none;
   transition: background-color 0.3s ease;
-}
-
-.page-container a:hover {
   cursor: pointer;
 }
 
+.page-container a:hover {
+  background-color: rgb(8, 46, 70);
+}
+
 a:active {
-  background-color: lightskyblue;
+  background-color: rgb(8, 46, 70);
 }

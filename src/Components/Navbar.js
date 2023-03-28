@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../Styles/navbar.css";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -21,22 +22,16 @@ const Navbar = () => {
               <nav>
                 <ul>
                   <li>
-                    <NavLink to="/smartphones">Smartphones</NavLink>
+                    <NavLink to="/home">Home</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/laptop">Laptop</NavLink>
+                    <NavLink to="/signup">SignUp</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/groceries">Groceries</NavLink>
+                    <NavLink to="/addtocart">Cart</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/fragnence">Fragnences</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/skincare">Skin Care</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/home decoration">Home Decoration</NavLink>
+                    <AddShoppingCartIcon className="cartIcon" />
                   </li>
                 </ul>
                 <div className="nav-bar-hamburger" onClick={toggleMenu}>
@@ -62,7 +57,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
     </>
   );
 };
