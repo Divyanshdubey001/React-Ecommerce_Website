@@ -1,7 +1,5 @@
+import { useEffect, useState } from "react";
 import "../Styles/shoppingsection.css";
-
-import React, { useState, useEffect } from "react";
->>>>>>> master
 
 function ShoppingSection() {
   const [products, setProducts] = useState("");

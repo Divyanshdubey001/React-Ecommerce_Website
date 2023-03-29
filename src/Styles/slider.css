@@ -1,5 +1,8 @@
 .image-slider-container {
   margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 80px;
 }
 
@@ -13,16 +16,20 @@
   margin-right: auto;
 }
 
-.img {
-  display: inline-block;
-}
-
 .left-arrow {
-  position: absolute;
   left: 50px;
+  cursor: pointer;
+}
+.left-arrow:hover {
+  transform: scale(4);
+  
 }
 
 .right-arrow {
-  position: absolute;
   right: 50px;
+  cursor: pointer;
+}
+
+.right-arrow:hover {
+  transform: scale(4);
 }
