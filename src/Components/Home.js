@@ -10,7 +10,7 @@ const Home = ({products}) => {
     <>
       <Navbar />
       <Slider />
-      <UICardstructure products={products} />
+      <UICardstructure products={products} handleAddProduct = {<handleAddProduct />} />
       <Newsletter />
       <Footer />
     </>

@@ -20,8 +20,16 @@
   left: 50px;
   cursor: pointer;
 }
+.left-arrow:hover {
+  transform: scale(4);
+  
+}
 
 .right-arrow {
   right: 50px;
   cursor: pointer;
+}
+
+.right-arrow:hover {
+  transform: scale(4);
 }

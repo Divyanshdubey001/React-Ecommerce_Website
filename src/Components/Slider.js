@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../Styles/slider.css";
-import ArrowCircleLeftTwoToneIcon from "@mui/icons-material/ArrowCircleLeftTwoTone";
-import ArrowCircleRightTwoToneIcon from "@mui/icons-material/ArrowCircleRightTwoTone";
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const SliderFunction = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -66,7 +66,7 @@ const SliderFunction = () => {
     <>
       <div className="image-slider-container">
         <div className="left-arrow">
-          <ArrowCircleLeftTwoToneIcon onClick={handlePrevClick} className="leftArrow" />
+          <KeyboardArrowLeftIcon onClick={handlePrevClick} className="leftArrow" />
         </div>
         <img
           src={sliderImages[currentImage].imgsrc}
@@ -74,7 +74,7 @@ const SliderFunction = () => {
           className="image-slide"
         ></img>
         <div className="right-arrow">
-          <ArrowCircleRightTwoToneIcon onClick={HandlenextClick} className="rightArrow"/>
+          <KeyboardArrowRightIcon onClick={HandlenextClick} className="rightArrow"/>
         </div>
       </div>
     </>

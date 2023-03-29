@@ -8,17 +8,18 @@ import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import "../Styles/shoppingsection.css";
 
-export default function MultiActionAreaCard({ products }) {
+export default function UICardstructure({ products }) {
   const data = products;
-  let i = "iPhone9";
-
-  console.log(data.filter((elm) => elm.title.includes(i.toLowerCase())));
+  // let i = "iPhone9";
+  // console.log(data.filter((elm) => elm.title.includes(i.toLowerCase())));
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   //filter data use state
   const [Data, setData] = useState("");
   const itemsPerPage = 9;
+  //cart State
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -32,6 +33,41 @@ export default function MultiActionAreaCard({ products }) {
     setItemOffset(newOffset);
   };
 
+  //Add to cart
+  const handleAddProduct = () => {
+    const ProductExits = cartItems.find((item) => item.id === products.id);
+    if (ProductExits) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === products.id
+            ? { ...ProductExits, quantity: ProductExits.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...products, quantity: 1 }]);
+    }
+    console.log("HandleAdd");
+    console.log("ProductExits", ProductExits);
+  };
+
+  //const remove from cart
+  const handleRemoveProduct = () => {
+    const ProductExits = cartItems.find((item) => item.id === products.id);
+    if (ProductExits.quantity === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== products.id));
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === products.id
+            ? { ...ProductExits, quantity: ProductExits.quantity - 1 }
+            : item
+        )
+      );
+    }
+    console.log("HandleRemove");
+    console.log("ProductExits", ProductExits);
+  };
   //filter data
   const handleData = (event) => {
     setData(event.target.value);
@@ -42,7 +78,7 @@ export default function MultiActionAreaCard({ products }) {
     (item) => item.category === Data.toLowerCase()
   );
 
-  console.log(filteredData);
+  // console.log(filteredData);
 
   return (
     <>
@@ -55,7 +91,7 @@ export default function MultiActionAreaCard({ products }) {
         <input
           className="input-search-bar"
           type="text"
-          placeholder="Search images..."
+          placeholder="Search..."
           onChange={handleData}
           value={Data}
         ></input>
@@ -128,10 +164,18 @@ export default function MultiActionAreaCard({ products }) {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button
+                  size="small"
+                  color="primary"
+                  onClick={() => handleAddProduct(products)}
+                >
                   Add to Cart
                 </Button>
-                <Button size="small" color="primary">
+                <Button
+                  size="small"
+                  color="primary"
+                  onClick={() => handleRemoveProduct(products)}
+                >
                   Remove from Cart
                 </Button>
               </CardActions>

@@ -113,3 +113,27 @@ hr {
 a:active {
   background-color: rgb(8, 46, 70);
 }
+
+.search-bar{
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+input{
+  width: 30%;
+  height: 20px;
+  align-self: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid;
+  margin-left: 30%;
+  margin-bottom: 3rem;
+}
+
+input:hover{
+  border-color: rgb(93, 93, 180);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
