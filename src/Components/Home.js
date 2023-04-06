@@ -5,12 +5,10 @@ import UICardstructure from "./UICardstructure";
 import Footer from "./Footer";
 import Newsletter from "./Newsletter";
 
-const Home = ({products}) => {
   return (
     <>
       <Navbar />
       <Slider />
-      <UICardstructure products={products} handleAddProduct = {<handleAddProduct />} />
       <Newsletter />
       <Footer />
     </>
