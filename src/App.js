@@ -25,7 +25,7 @@ function App({handleAddProduct}) {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />}  />
       </Routes>
-
+    
       {/* <ShoppingSection /> */}
     </>
   );
